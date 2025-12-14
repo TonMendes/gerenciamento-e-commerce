@@ -1,0 +1,25 @@
+<div class="card bg-white">
+    <div class="card-body">
+        <h2 class="mb-4">Detalhes do Produto</h2>
+
+        <h4 class="fw-bold">{{produto.nome}}</h4>
+        <p>Preço: {{produto.preco}}</p>
+        <p>Disponibilidade: {{produto.estoque}}</p>
+
+        <hr>
+
+        <h5 class="fw-bold">Detalhes</h5>
+        <ul>
+            {{#each produto.detalhes}}
+            <li>{{@key}}: {{this}}</li>
+            {{/each}}
+        </ul>
+
+        <div class="mt-4">
+            <a href="/" class="btn btn-secondary">Voltar</a>
+            <a href="/produto/comprar/{{produto._id}}" class="btn btn-success">
+                <i class="bi bi-cart-plus"></i> Comprar
+            </a>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,40 @@
+<h2 class="mb-4">Gerenciamento de Pedidos</h2>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Data do Pedido</th>
+            <th>Usuário</th>
+            <th>Última Atualização</th>
+            <th>Valor Total</th>
+            <th>Produtos Distintos</th>
+            <th>Status</th>
+            <th>Ações</th>
+        </tr>
+    </thead>
+    <tbody>
+        {{#each pedidos}}
+        <tr>
+            <td>{{this.dataCompra}}</td>
+            <td>{{this.nomeUsuario}}</td>
+            <td>{{this.dataAtualizacao}}</td>
+            <td>R$ {{this.valorTotal}}</td>
+            <td>{{this.produtosDistintos}}</td>
+            <td>{{this.status}}</td>
+            <td>
+                {{#if (verificarAtivo this.status 'CANCELADO')}}
+                    <span class="text-muted">Pedido cancelado</span>
+                {{else}}
+                    <a href="/pedidos/status/{{this.id}}/cancelado" class="btn btn-danger btn-sm">Cancelar</a>
+                    <a href="/pedidos/status/{{this.id}}/suspenso" class="btn btn-warning btn-sm">Suspender</a>
+                    <a href="/pedidos/status/{{this.id}}/concluido" class="btn btn-success btn-sm">Concluir</a>
+                {{/if}}
+            </td>
+        </tr>
+        {{/each}}
+    </tbody>
+</table>
+
+<div class="mt-4">
+    <a href="/" class="btn btn-secondary">Voltar</a>
+</div>

@@ -1,0 +1,25 @@
+{{#if produtos.length}}
+<div class="row">
+    {{#each produtos}}
+    <div class="col-md-3 mb-3">
+        <div class="card bg-white rounded shadow-sm">
+            <div class="card-body">
+                <h5 class="card-title fw-bold">{{this.nome}}</h5>
+                <p class="card-text">Preço: R$ {{this.preco}}</p>
+                <p class="card-text">Disponíveis: {{this.estoque}}</p>
+            </div>
+            <div class="card-footer text-end">
+                <a href="/produto/detalhes/{{this._id}}" class="btn btn-outline-secondary btn-sm">
+                    <i class="bi bi-box-arrow-up-right"></i> Detalhes
+                </a>
+                <a href="/produto/comprar/{{this._id}}" class="btn btn-success btn-sm">
+                    <i class="bi bi-cart-plus"></i> Comprar
+                </a>
+            </div>
+        </div>
+    </div>
+    {{/each}}
+</div>
+{{else}}
+<p><em>Desculpe! Todos os produtos estão esgotados, volte em breve.</em></p>
+{{/if}}

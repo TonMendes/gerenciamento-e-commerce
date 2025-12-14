@@ -1,0 +1,19 @@
+{
+  "name": "gerenciamento-e-commerce",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "start": "node ./bin/www"
+  },
+  "dependencies": {
+    "cookie-parser": "^1.4.7",
+    "debug": "^4.3.7",
+    "express": "^4.21.2",
+    "hbs": "^4.2.0",
+    "http-errors": "^2.0.0",
+    "morgan": "^1.10.0",
+    "sequelize": "^6.37.5",
+    "mysql2": "^3.11.5",
+    "mongoose": "^8.9.3"
+  }
+}
